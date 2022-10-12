@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+*,div,h1,h2,h3,h4,h5,h6,p {
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+}
+body{
+    background: #F5F7FB;
+    min-height: 100vh;
+    height: 100%;
+}#root{position: absolute; width: 100%; height: 100%;}
+
+.root{
+    position: relative;
+    font-family: Karla;
+    text-align: center;
+    
+    width: 100%;
+    min-height: 100%;
+
+
+    
+    
+}
+.main{
+    position:relative;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    
+}
+.bckgrd-img{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    
+}
+.bckgrd-img-top{
+    position: absolute;
+    top: 0px;
+    right:-20px;
+}
+ .bckgrd-img-btm{
+    position: absolute;
+    bottom: 0px;
+    left:0;
+}
+ 
+ 
+.landing{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    padding: 20px;
+    
+    color: #293264;
+    ;
+}
+.landing>h1{
+    padding: 10px;
+    font-size: 31px;
+    line-height: 37px;
+}
+.landing>p{
+    color: #293264;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+
+.landing>button{
+    width: 193px;
+    height: 52px;
+    margin: 30px;
+
+    color: #F5F7FB;
+    background: #4D5B9E;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    
+    cursor: pointer;
+    ;
+}.landing>button:active{box-shadow: inset 6px 6px 10px 0 #354075, inset -6px -6px 10px 0 #4D5B9E;}
+.questions-container{
+
+
+    
+    height: max-content;
+    
+    min-width: 500px;
+    width: calc(100% - 200px);
+
+    padding: 40px 20px;
+    margin: auto;
+    
+
+}
+.question-element{
+    /* position: relative;
+    top:50%;
+    transform: translate(-50%-50%); */
+    border-bottom: 0.794239px solid #DBDEF0;
+    min-width: 400px;
+    margin: 20px;
+    
+}.question-element p{
+        font-weight: 700;
+        font-size: 19px;
+        line-height: 19px;
+        text-align: left;
+        color: #293264;
+
+
+}
+.question-element .input{
+    text-align: start;
+    padding: 15px 0px 20px;
+    
+}
+.question-element label{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        text-align: center;
+        cursor: pointer;
+        
+        
+
+ ;
+        
+      
+        color: #293264;
+        
+        border: 0.8px solid #4D5B9E80;
+        padding: 5px 20px;
+        border-radius:10px;
+        margin: 10px 20px 20px 0px;
+        
+}.question-element label>span{white-space: nowrap; display: inline-block; margin-block: 8px}
+.question-element input{display: none;}.question-element input:checked + label{background-color: #D6DBF5;border: 1px solid #D6DBF5;}
+
+.confirm-answers{
+        height: 35px;
+        padding-inline: 25px;
+        margin: 20px;
+        
+        background: #4D5B9E;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+
+        color: #F5F7FB;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 12px;
+        cursor: pointer;
+        
+        }.confirm-answers:active{box-shadow: inset 6px 6px 10px 0 #35407580;outline: none;}
+        
+        .revealAnswers{
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 19px;
+        text-align: center;
+        color: #293264;
+        
+
+        }
+        
+        
+        
+        
+        
+        .question-element .correctAnswer{
+          background: #94D7A2 !important; border: 1px solid #94D7A2;  pointer-events: none;
+        }
+        .question-element .wrongAnswer{opacity:0.5;  pointer-events: none;}
+        .question-element .checkedWrongAnswer{
+          background: #F8BCBC !important ; border: 0.8px solid #F8BCBC ; pointer-events: none; outline: none; opacity:0.5;
+        }
