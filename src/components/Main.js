@@ -45,7 +45,16 @@ export default function Main (){
         setLoaded(false)
         
     }
-  
+    function convertHTMLEntity(text){
+         text=text||''
+        const span = document.createElement('span');
+    
+        return text
+        .replace(/&[#A-Za-z0-9]+;/gi, (entity,position,text)=> {
+            span.innerHTML = entity;
+            return span.innerText;
+        });
+    }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -59,7 +68,7 @@ export default function Main (){
                     
                    setCorrectAnswer((prevState)=>({...prevState,[index]:quiz.correct_answer})) //saves correct answers to memory
                     let ans=[...quiz.incorrect_answers,quiz.correct_answer] //merging options
-                    newArray.push(ans.sort(() => Math.random() - 0.5)) //shuffling options
+                    newArray.push(ans.sort(() => Math.random() - 0.5)); return '' //shuffling options
                 })      
                 return newArray //saves shuffled options to answersArray --more of an answers object now lol
             }); setLoaded(true)
@@ -74,11 +83,11 @@ export default function Main (){
         return (
             <Questions
                 key={index}
-                question={quiz.question}
-                option1={answers[0]}
-                option2={answers[1]}
-                option3={answers[2]}
-                option4={answers[3]}
+                question={convertHTMLEntity( quiz.question)}
+                option1={ convertHTMLEntity (answers[0])}
+                option2={ convertHTMLEntity (answers[1])}
+                option3={ convertHTMLEntity (answers[2])}
+                option4={ convertHTMLEntity (answers[3])}
                 name={index}
                 handleChange={handleChange}
                 value= {formData[index]}
@@ -89,7 +98,7 @@ export default function Main (){
 /*Question iterator ends*/ 
         
      
-     
+
   
 /////////////////////////////////////////////////////////////////////////////////////////////////// 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
